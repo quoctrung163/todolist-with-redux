@@ -51,20 +51,20 @@ const TodoList = ({
   //   return result;
   // };
 
-  const multiHanleChange = (value) => {
-    handleChange(value);
-    setError(value);
-  };
+  const multiOnClick = (input) => {
+    if (input.length > 1) {
+      addItem(input);
+    }
 
-  console.log(input);
-  console.log("err" + error);
+    setError(input);
+  };
 
   return (
     <div className="todolist">
       <TodoTitle />
       <TodoMain
-        onHandleChange={(event) => multiHanleChange(event.target.value)}
-        handleClick={addItem}
+        onHandleChange={(event) => handleChange(event.target.value)}
+        handleClick={multiOnClick}
         input={input}
       >
         Add
