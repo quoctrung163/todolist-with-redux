@@ -52,12 +52,16 @@ const TodoList = ({
   // };
 
   const multiOnClick = (input) => {
-    if (input.length > 1) {
+    if (input.length > 0) {
       addItem(input);
+      setError("");
+    } else {
+      setError(input);
     }
-
-    setError(input);
+    input = "";
   };
+
+  console.log(input);
 
   return (
     <div className="todolist">
